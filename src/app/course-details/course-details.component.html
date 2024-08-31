@@ -1,1 +1,5 @@
-<p>course-details works!</p>
+<div class="container" *ngIf="course">
+  <h2>{{ course.title }}</h2>
+  <p>{{ course.description }}</p>
+  <button class="btn btn-primary" (click)="addToCart(course)">Add to Cart</button>
+</div>
