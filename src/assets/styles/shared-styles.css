@@ -1,0 +1,12 @@
+.container {
+  max-width: 600px;
+  margin-top: 50px;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #f8f9fa;
+}
