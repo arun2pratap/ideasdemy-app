@@ -10,6 +10,7 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
 import { CartSummaryComponent } from './cart-summary/cart-summary.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderCompleteComponent } from './order-complete/order-complete.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OrderCompleteComponent } from './order-complete/order-complete.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
