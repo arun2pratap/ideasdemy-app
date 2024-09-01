@@ -1,1 +1,10 @@
-<p>cart-summary works!</p>
+<div class="container">
+  <h2>Cart Summary</h2>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of cart">
+      {{ item.title }} - ${{ item.price }}
+      <button class="btn btn-danger btn-sm float-right" (click)="removeFromCart(item.id)">Remove</button>
+    </li>
+  </ul>
+  <button class="btn btn-primary mt-3" (click)="checkout()">Checkout</button>
+</div>

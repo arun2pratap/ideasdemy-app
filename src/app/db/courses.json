@@ -1,9 +1,9 @@
 {
   "courses": [
-    { "id": 1, "title": "Angular 0001", "description": "Angular 0001" },
-    { "id": 2, "title": "Advanced 0002", "description": "Advanced 0002" },
-    { "id": 3, "title": "Advanced 0003", "description": "Advanced 0003" },
-    { "id": 4, "title": "Advanced 0004", "description": "Advanced 0004" },
-    { "id": 5, "title": "Advanced 0005", "description": "Advanced 0005" }
+    { "id": 1, "title": "Angular 0001", "description": "Angular ---- 0001" },
+    { "id": 2, "title": "Advanced 0002", "description": "Advanced ---- 0002" },
+    { "id": 3, "title": "Advanced 0003", "description": "Advanced ----  0003" },
+    { "id": 4, "title": "Advanced 0004", "description": "Advanced ----  0004" },
+    { "id": 5, "title": "Advanced 0005", "description": "Advanced  ----  0005" }
   ]
 }
