@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './order-complete.component.html',
   styleUrls: ['./order-complete.component.css']
 })
-export class OrderCompleteComponent {
-
-}
+export class OrderCompleteComponent {}
