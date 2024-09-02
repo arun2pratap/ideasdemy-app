@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from './cart.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   cartCount: number = 0;
 
-  ngOnInit() {
-    this.updateCartCount();
-  }
+  constructor(private cartService: CartService) {}
 
-  updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    this.cartCount = cart.length;
+  ngOnInit() {
+    this.cartService.cart$.subscribe(cart => {
+      this.cartCount = cart.length;
+    });
   }
 }
