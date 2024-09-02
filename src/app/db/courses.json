@@ -1,9 +1,42 @@
 {
   "courses": [
-    { "id": 1,"price": 14, "title": "Angular 0001", "description": "Angular ---- 0001" },
-    { "id": 2,"price": 11, "title": "Advanced 0002", "description": "Advanced ---- 0002" },
-    { "id": 3,"price": 12, "title": "Advanced 0003", "description": "Advanced ----  0003" },
-    { "id": 4,"price": 15, "title": "Advanced 0004", "description": "Advanced ----  0004" },
-    { "id": 5,"price": 11, "title": "Advanced 0005", "description": "Advanced  ----  0005" }
+    {
+      "id": "1",
+      "price": 14,
+      "title": "Angular 0001",
+      "description": "Angular ---- 0001"
+    },
+    {
+      "id": "2",
+      "price": 11,
+      "title": "Advanced 0002",
+      "description": "Advanced ---- 0002"
+    },
+    {
+      "id": "3",
+      "price": 12,
+      "title": "Advanced 0003",
+      "description": "Advanced ----  0003"
+    },
+    {
+      "id": "4",
+      "price": 15,
+      "title": "Advanced 0004",
+      "description": "Advanced ----  0004"
+    },
+    {
+      "id": "5",
+      "price": 11,
+      "title": "Advanced 0005",
+      "description": "Advanced  ----  0005"
+    }
+  ],
+  "cart": [
+    {
+      "id": "4",
+      "price": 15,
+      "title": "Advanced 0004",
+      "description": "Advanced ----  0004"
+    }
   ]
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-cart-summary',
@@ -9,10 +10,12 @@ import { Router } from '@angular/router';
 export class CartSummaryComponent implements OnInit {
   cart: any[] = [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private cartService: CartService) {}
 
   ngOnInit() {
-    this.cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    this.cartService.cart$.subscribe(cart => {
+      this.cart = cart;
+    });
   }
 
   checkout() {
@@ -20,7 +23,10 @@ export class CartSummaryComponent implements OnInit {
   }
 
   removeFromCart(courseId: number) {
-    this.cart = this.cart.filter(item => item.id !== courseId);
-    localStorage.setItem('cart', JSON.stringify(this.cart));
+    this.cartService.removeFromCart(courseId);
+  }
+
+  getTotalPrice() {
+    return this.cartService.getTotalPrice();
   }
 }

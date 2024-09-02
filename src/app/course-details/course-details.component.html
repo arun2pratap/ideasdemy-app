@@ -1,5 +1,9 @@
 <div class="container" *ngIf="course">
   <h2>{{ course.title }}</h2>
   <p>{{ course.description }}</p>
-  <button class="btn btn-primary" (click)="addToCart(course)">Add to Cart</button>
+  <p><strong>Price: </strong> ${{ course.price }}</p>
+  <button class="btn btn-primary" (click)="toggleCart(course)">
+    <i class="fas" [ngClass]="isInCart(course.id) ? 'fa-check' : 'fa-cart-plus'"></i>
+    {{ isInCart(course.id) ? 'Remove from Cart' : 'Add to Cart' }}
+  </button>
 </div>

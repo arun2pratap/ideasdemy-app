@@ -17,6 +17,7 @@
         <option>PayPal</option>
       </select>
     </div>
+    <h3>Total: ${{ getTotalPrice() }}</h3>
     <button type="submit" class="btn btn-primary" [disabled]="!checkoutForm.valid">Place Order</button>
   </form>
 </div>

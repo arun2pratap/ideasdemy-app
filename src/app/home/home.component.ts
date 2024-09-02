@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,11 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   courses: any[] = [];
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private cartService: CartService
+  ) {}
 
   ngOnInit() {
     this.http.get('http://localhost:3000/courses')
@@ -19,7 +24,15 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  viewCourse(courseId: number) {
-    this.router.navigate(['/course-details', courseId]);
+  isInCart(courseId: number) {
+    return this.cartService.isInCart(courseId);
+  }
+
+  toggleCart(course: any) {
+    if (this.isInCart(course.id)) {
+      this.cartService.removeFromCart(course.id);
+    } else {
+      this.cartService.addToCart(course);
+    }
   }
 }

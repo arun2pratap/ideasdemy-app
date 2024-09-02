@@ -6,7 +6,11 @@
         <div class="card-body">
           <h5 class="card-title">{{ course.title }}</h5>
           <p class="card-text">{{ course.description }}</p>
-          <button class="btn btn-primary" (click)="viewCourse(course.id)">View Details</button>
+          <p class="card-text"><strong>Price: </strong> ${{ course.price }}</p>
+          <button class="btn btn-primary" (click)="toggleCart(course)">
+            <i class="fas" [ngClass]="isInCart(course.id) ? 'fa-check' : 'fa-cart-plus'"></i>
+            {{ isInCart(course.id) ? 'Remove from Cart' : 'Add to Cart' }}
+          </button>
         </div>
       </div>
     </div>

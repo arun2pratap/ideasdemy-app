@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-course-details',
@@ -10,7 +11,11 @@ import { HttpClient } from '@angular/common/http';
 export class CourseDetailsComponent implements OnInit {
   course: any;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    private cartService: CartService
+  ) {}
 
   ngOnInit() {
     const courseId = this.route.snapshot.params['id'];
@@ -20,9 +25,15 @@ export class CourseDetailsComponent implements OnInit {
       });
   }
 
-  addToCart(course: any) {
-    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    cart.push(course);
-    localStorage.setItem('cart', JSON.stringify(cart));
+  isInCart(courseId: number) {
+    return this.cartService.isInCart(courseId);
+  }
+
+  toggleCart(course: any) {
+    if (this.isInCart(course.id)) {
+      this.cartService.removeFromCart(course.id);
+    } else {
+      this.cartService.addToCart(course);
+    }
   }
 }
